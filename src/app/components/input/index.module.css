@@ -1,5 +1,12 @@
-.buttonContaniner {
+.buttonContainer {
     color: white;
-    background-color: rgb(29, 78, 214);
-    
+    background-color: #3C82F6;
+    width: 59px;
+    height: 40px;
+    border-radius: 6px;
+}
+.inpuT {
+    background-color: white;
+    width: 280px;
+    height: 40px;
 }
