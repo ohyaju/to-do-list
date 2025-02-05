@@ -6,7 +6,7 @@ const Tabs = () => {
     const [selectedStatus, setSelectedStatus] = useState("Completed");
 
     return (
-        <div>
+        <div className={`${styles.btn}`}>
             {TABS.map((currentStatus) => (
                 <button
                     key={currentStatus}
