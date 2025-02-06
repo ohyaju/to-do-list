@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 const initialTasks = [];
 export function Filter() {
     const [tasks, setTasks] = useState(initialTasks);
 
     function addTask() {
-        const newTaskText = prompt("Task?");
+        const newTaskText = text("Task?");
         if (newTaskText) {
             const newTasks = [{ text: newTaskText, completed: false, id: nanoid() },...tasks];
             setTasks(newTasks);
         }
     }
     function editTask(index) {
-        const updatedTaskText = promp("Task?", tasks[index].text);
+        const updatedTaskText = text("Task?", tasks[index].text);
        
         if (updatedTaskText) {
             const clonedTasks = [...tasks];
@@ -31,7 +31,7 @@ export function Filter() {
         <div>
             <button onClick={addTask}>Add</button>
             {tasks.map((task,index)=>(
-                <div key={tasks.id} className="tasks">
+                <div key={tasks} className="tasks">
                     <input type="checkbox"/>
                     <span>{task.text}</span>
                     <button onClick={()=> editTask(index)}>Edit</button>

@@ -6,14 +6,15 @@ import TaskList from "../app/components/tasklist/index.js"
 import { Filter } from "../app/components/filter/index.js"
 import { useState } from "react";
 export default function Home() {
+  const [tasks,setTasks]=useState([]);
+  const [inputValue, setInputValue]=useState('');
   return (
     <div>
       <div className={styles.cardContainer}>
         <div className="inputAdd">
           <Title />
-          {/* <div className="tabsPosition"> */}
-          <Input />
-          <TaskList />
+          <Input setTasks setInputValue={setInputValue}/>
+          <TaskList tasks={tasks}/>
           <Filter />
 
         </div>
