@@ -2,7 +2,7 @@ import Tabs from '../tabs'
 import styles from './index.module.css'
 const Input = () => {
     const onChange = (event) => {
-        props.setInputValue(event.target.value)
+        // setInputValue(event.target.value)
     }
     const onSubmit = ()=> {
         

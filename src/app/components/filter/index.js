@@ -5,19 +5,10 @@ export function Filter() {
     const [tasks, setTasks] = useState(initialTasks);
 
     function addTask() {
-        const newTaskText = text("Task?");
+        const newTaskText =prompt("Task?");
         if (newTaskText) {
             const newTasks = [{ text: newTaskText, completed: false, id: nanoid() },...tasks];
             setTasks(newTasks);
-        }
-    }
-    function editTask(index) {
-        const updatedTaskText = text("Task?", tasks[index].text);
-       
-        if (updatedTaskText) {
-            const clonedTasks = [...tasks];
-            clonedTasks[index].text = updatedTaskText;
-            setTasks(clonedTasks);
         }
     }
     function deleteTask(id){
@@ -33,8 +24,7 @@ export function Filter() {
             {tasks.map((task,index)=>(
                 <div key={tasks} className="tasks">
                     <input type="checkbox"/>
-                    <span>{task.text}</span>
-                    <button onClick={()=> editTask(index)}>Edit</button>
+                    {task.text}
                     <button onClick={()=>deleteTask(task.id)}>Delete</button>
                     </div>
             ))}
